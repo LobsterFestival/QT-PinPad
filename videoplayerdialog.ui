@@ -73,7 +73,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="openFileButton">
    <property name="geometry">
     <rect>
      <x>350</x>
@@ -86,6 +86,38 @@
     <string>Open File</string>
    </property>
   </widget>
+  <widget class="QSplitter" name="splitter_2">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>120</y>
+     <width>50</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <widget class="QSlider" name="volumeSlider">
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>1</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="text">
+     <string>Volume</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
  </widget>
  <resources/>
  <connections>
@@ -96,8 +128,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>446</x>
-     <y>386</y>
+     <x>476</x>
+     <y>456</y>
     </hint>
     <hint type="destinationlabel">
      <x>518</x>

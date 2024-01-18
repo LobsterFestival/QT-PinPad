@@ -21,7 +21,7 @@ void VideoPlayerDialog::loadVideo(QString fileName)
     player->setSource(QUrl::fromLocalFile(fileName));
     video->setVisible(true);
     video->show();
-    audioOutput->setVolume(50);
+    ui->volumeSlider->setSliderPosition(30);
 
 }
 
@@ -36,9 +36,11 @@ void VideoPlayerDialog::on_b_play_clicked()
     {
         IS_PAUSED = false;
         player->play();
+        ui->b_play->setText("Pause");
     } else {
         player->pause();
         IS_PAUSED = true;
+        ui->b_play->setText("Play");
     }
 }
 
@@ -46,11 +48,19 @@ void VideoPlayerDialog::on_b_play_clicked()
 void VideoPlayerDialog::on_b_stop_clicked()
 {
     player->stop();
-    IS_PAUSED = true;
+    if(!IS_PAUSED)
+        ui->b_play->setText("Play");
+}
+
+void VideoPlayerDialog::on_volumeSlider_valueChanged(int value)
+{
+    float normalizedValue = value / 100.0;
+    qDebug() << "Volume Level: " << value << " Normalized: " << normalizedValue;
+    audioOutput->setVolume(normalizedValue);
 }
 
 
-void VideoPlayerDialog::on_pushButton_clicked()
+void VideoPlayerDialog::on_openFileButton_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this, "Select Video File", "", "MP4 files (*.mp4)");
     loadVideo(fileName);

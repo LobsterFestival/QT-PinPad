@@ -26,7 +26,9 @@ private slots:
 
     void on_b_stop_clicked();
 
-    void on_pushButton_clicked();
+    void on_volumeSlider_valueChanged(int value);
+
+    void on_openFileButton_clicked();
 
 private:
     Ui::VideoPlayerDialog *ui;

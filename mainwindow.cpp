@@ -31,6 +31,8 @@ void MainWindow::on_b_enter_clicked()
         videoPlayerDialog->show();
     } else {
         QMessageBox::information(this,"Login", "Password is incorrect!");
+        // Clear password box after incorrect password.
+        ui->lineEdit->clear();
     }
 }
 
@@ -38,7 +40,7 @@ void MainWindow::selectPasswordFile()
 {
     QString fileName = QFileDialog::getOpenFileName(this, "Select Password File", "", "Text Files (*.txt)");
     QFile temp(fileName);
-    // Verify password file format, single line of numbers, 10 chars long
+    // Verify password file format, single line of numbers
     if (!temp.open(QIODevice::ReadOnly | QIODevice::Text)){
         QMessageBox::information(this,"Password File Error","Could Not Open " + fileName);
     }
