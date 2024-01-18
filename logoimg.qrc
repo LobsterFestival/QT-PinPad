@@ -1,5 +1,15 @@
 <RCC>
     <qresource prefix="/">
         <file>logo200px.png</file>
+        <file>PayPhoneButtons/0.png</file>
+        <file>PayPhoneButtons/1.png</file>
+        <file>PayPhoneButtons/2.png</file>
+        <file>PayPhoneButtons/3.png</file>
+        <file>PayPhoneButtons/4.png</file>
+        <file>PayPhoneButtons/5.png</file>
+        <file>PayPhoneButtons/6.png</file>
+        <file>PayPhoneButtons/7.png</file>
+        <file>PayPhoneButtons/8.png</file>
+        <file>PayPhoneButtons/9.png</file>
     </qresource>
 </RCC>

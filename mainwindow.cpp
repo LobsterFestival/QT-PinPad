@@ -45,8 +45,6 @@ void MainWindow::selectPasswordFile()
 
     QByteArray firstLine = temp.readLine();
     verifyPasswordFormat(firstLine);
-
-
 }
 
 void MainWindow::verifyPasswordFormat(QByteArray firstLine)
@@ -55,6 +53,7 @@ void MainWindow::verifyPasswordFormat(QByteArray firstLine)
     QRegularExpressionMatch match = re.match(firstLine);
     if (match.hasMatch()) {
         password = match.captured(0);
+        ui->b_enter->setEnabled(true);
     } else {
         QMessageBox::information(this, "Password File Error", "Password File not formatted correctly, please use a single line of 0-9 characters only.");
     }
