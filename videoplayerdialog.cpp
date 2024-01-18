@@ -48,8 +48,11 @@ void VideoPlayerDialog::on_b_play_clicked()
 void VideoPlayerDialog::on_b_stop_clicked()
 {
     player->stop();
-    if(!IS_PAUSED)
+    if(!IS_PAUSED){
+        IS_PAUSED = true;
         ui->b_play->setText("Play");
+    }
+
 }
 
 void VideoPlayerDialog::on_volumeSlider_valueChanged(int value)
